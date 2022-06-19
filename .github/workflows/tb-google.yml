@@ -19,7 +19,7 @@ on:
     tags:
       - '*'
     paths:
-      - 'topwaypoints-backend/**'
+      - 'topwaypoints-backend/**/*'
   pull_request:
     branches:
       - 'master'
