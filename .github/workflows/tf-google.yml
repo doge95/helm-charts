@@ -90,7 +90,7 @@ jobs:
     # Package and Push the Helm chart to Google Container Registry
     - name: Package and Publish
       run: |
-        helm package topwaypoints-backend/
+        helm package topwaypoints-frontend/
         helm push *.tgz oci://$GAR_LOCATION-docker.pkg.dev/$PROJECT_ID/$REPOSITORY
     
     # # Set up kustomize
