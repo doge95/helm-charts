@@ -41,13 +41,14 @@ service:
   port: 80
 
 ingress:
-  enabled: enable
+  enabled: true
   className: ""
   annotations:
     kubernetes.io/ingress.class: "gce"
     # kubernetes.io/tls-acme: "true"
   hosts:
     - host: topwaypoints.io
+      paths:
       - path: /*
         pathType: ImplementationSpecific
         backend:
