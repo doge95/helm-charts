@@ -37,16 +37,16 @@ spec:
             - name: http
               containerPort: 8088
               protocol: TCP
-          livenessProbe:
-            initialDelaySeconds: 15
-            httpGet:
-              path: /
-              port: http
-          readinessProbe:
-            initialDelaySeconds: 15
-            httpGet:
-              path: /
-              port: http
+          # livenessProbe:
+          #   initialDelaySeconds: 15
+          #   httpGet:
+          #     path: /
+          #     port: http
+          # readinessProbe:
+          #   initialDelaySeconds: 15
+          #   httpGet:
+          #     path: /
+          #     port: http
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
