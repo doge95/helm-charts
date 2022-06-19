@@ -48,28 +48,29 @@ ingress:
     # kubernetes.io/tls-acme: "true"
   rules:
     - host: topwaypoints.io
-      paths:
-      - path: /*
-        pathType: ImplementationSpecific
-        backend:
-          service:
-            name: topwaypoints-frontend
-            port:
-              number: 80
-      - path: /getAirports
-        pathType: ImplementationSpecific
-        backend:
-          service:
-            name: topwaypoints-backend
-            port:
-              number: 80
-      - path: /getTopWaypoints
-        pathType: ImplementationSpecific
-        backend:
-          service:
-            name: topwaypoints-backend
-            port:
-              number: 80
+      http:
+        paths:
+        - path: /*
+          pathType: ImplementationSpecific
+          backend:
+            service:
+              name: topwaypoints-frontend
+              port:
+                number: 80
+        - path: /getAirports
+          pathType: ImplementationSpecific
+          backend:
+            service:
+              name: topwaypoints-backend
+              port:
+                number: 80
+        - path: /getTopWaypoints
+          pathType: ImplementationSpecific
+          backend:
+            service:
+              name: topwaypoints-backend
+              port:
+                number: 80
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:
