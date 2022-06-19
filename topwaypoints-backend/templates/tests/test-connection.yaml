@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "{{ include "topwaypoints-backend.fullname" . }}-test-connection"
+  labels:
+    {{- include "topwaypoints-backend.labels" . | nindent 4 }}
+  annotations:
+    "helm.sh/hook": test
+spec:
+  containers:
+    - name: wget
+      image: busybox
+      command: ['wget']
+      args: ['{{ include "topwaypoints-backend.fullname" . }}:{{ .Values.service.port }}']
+  restartPolicy: Never
