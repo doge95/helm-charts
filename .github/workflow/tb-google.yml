@@ -33,7 +33,7 @@ env:
   REPOSITORY: helm-charts # TODO: update to Artifact Registry docker repository
 
 jobs:
-  setup-build-publish:
+  setup-build-publish-deploy:
     name: Setup, Build, and Publish, and Deploy
     runs-on: ubuntu-latest
 
