@@ -6,7 +6,7 @@ replicaCount: 1
 
 image:
   repository: us-east4-docker.pkg.dev/pelagic-berm-353807/topwaypoints/frontend
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
   tag: ""
 
